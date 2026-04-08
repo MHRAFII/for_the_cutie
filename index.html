@@ -93,17 +93,44 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* Cute paper-style oval button */
+.paper-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #fff0f5;
+    color: #ff6f91;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 2px dashed #ffb6c1;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    transform: rotate(-5deg);
+}
+
+.paper-btn:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
 /* Image */
 img {
     width: 100%;
     border-radius: 12px;
 }
 
+/* Final letter page image fix */
+.letter-img {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
 /* Typing fix */
 .typing {
-    white-space: normal;   /* FIXED */
-    word-wrap: break-word; /* FIXED */
-    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
 }
 </style>
 </head>
@@ -141,8 +168,16 @@ for(let i=0;i<15;i++){
 <!-- PAGE 3 -->
 <div class="page" id="page3">
     <div class="card">
-        <img src="happy.jpeg" alt="Happy Birthday">
+        <img src="your-image.jpeg" alt="Happy Birthday">
     </div>
+
+    <!-- Cute button -->
+    <button class="paper-btn" onclick="nextPage(4)">Click!! 💖</button>
+</div>
+
+<!-- PAGE 4 (Letter Image) -->
+<div class="page" id="page4">
+    <img src="letter.jpeg" class="letter-img" alt="Love Letter">
 </div>
 
 <script>
@@ -155,9 +190,9 @@ function nextPage(pageNumber) {
     }
 }
 
-/* Typing animation (fixed for mobile) */
+/* Typing animation */
 function typeText() {
-    const text = "I am sorry Halima that I can't give you as much time as I should and I am very far away... 💔";
+    const text = "I am sorry Halima that I couldn't give you as much time as I should and i love you so muchhhh... 💖💝💖";
     let i = 0;
     const speed = 35;
     const target = document.getElementById("message");
